@@ -40,20 +40,20 @@ def main():
     k = st.sidebar.slider('K', 1, 10, 3)
 
     # Retrieve and display fundamental factors
-    # st.header('Fundamental Analysis')
-    # stock = yf.Ticker(stock_symbol)
-    # stock_info = stock.info
-    # column_1, column_2 = st.columns(2)
-    # with column_1:
-    #     st.write('PEG ratio: ' + str(stock_info['pegRatio']))
-    #     st.write('Trailing EPS: ' + str(stock_info['trailingEps']))
-    #     #st.write('Trailing PE: ' + str(stock_info['trailingPE']))
-    #     st.write('Market Cap: ' + str(stock_info['marketCap']))
-    # with column_2:
-    #     st.write('Book value per share: ' + str(stock_info['bookValue']))
-    #     st.write('Forward EPS: ' + str(stock_info['forwardEps']))
-    #     st.write('Forward PE: ' + str(stock_info['forwardPE']))
-    #     st.write('Dividend Yield: ' + str(stock_info['dividendYield']))
+    st.header('Fundamental Analysis')
+    stock = yf.Ticker(stock_symbol)
+    stock_info = stock.info
+    column_1, column_2 = st.columns(2)
+    with column_1:
+        st.write('PEG ratio: ' + str(stock_info['pegRatio']))
+        st.write('Trailing EPS: ' + str(stock_info['trailingEps']))
+        #st.write('Trailing PE: ' + str(stock_info['trailingPE']))
+        st.write('Market Cap: ' + str(stock_info['marketCap']))
+    with column_2:
+        st.write('Book value per share: ' + str(stock_info['bookValue']))
+        st.write('Forward EPS: ' + str(stock_info['forwardEps']))
+        st.write('Forward PE: ' + str(stock_info['forwardPE']))
+        st.write('Dividend Yield: ' + str(stock_info['dividendYield']))
 
     symbols.append(stock_symbol)
     symbol_txt = spy_symbol + " " + stock_symbol
